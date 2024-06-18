@@ -4,7 +4,8 @@ async function downloadVideo() {
     
     if (videoID) {
         try {
-            // GET the data
+            // GET the data from the api
+            //this fetch link is an example link to get the youtube video data,
             const response = await fetch(`https://api.example.com/getVideoInfo?videoId=${videoId}`);
             const data = response.json();
 
@@ -35,7 +36,7 @@ async function downloadVideo() {
             a.textContent = `Download ${link.quality}`;
             //sets the download attribute of the anchor element, which tells the browser to download the URL instead of navigating to it.
             a.download = '';
-            
+
             downloadLinkDiv.appendChild(a);
             downloadLinkDiv.appendChild(document.createElement('br'));
         });
